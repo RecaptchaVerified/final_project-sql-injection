@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="module.css" />
+  </head>
+  <body>
+    <h3>Unsanitized input</h3>
+    <h1>Registration Form</h1>
+    <form method="post" action='Registration.php'>
+      <fieldset>
+        <label for="First_name">Enter Your First Name: </label>
+        <input id="First_name" name="First_name" type="text" placeholder="First Name" required />
+        <label for="Last_name">Enter Your Last Name: </label>
+        <input id="Last_name" name="Last_name" type="text" placeholder="Last Name" required />
+        <!--Vulnerable code-->
+        <label for="Username">Enter Preferred Username: </label>
+        <input id="Username" name="username" type="text" placeholder="username" required />
+        <label for="Email_ID">Enter Your Email: </label>
+        <input id="Email_ID" name="email" type="text" placeholder="email" required/>
+        <label for="Password">Create a New Password: </label>
+        <input id="Password" name="password" type="text" placeholder="password" required/>
+        <label for="Contact_Number">Enter Your Contact Number: </label>
+        <input id="Contact_Number" name="number" type="text" placeholder="number" required />
+        <!--Fixed code by using regex for input validation
+        <label for="Username">Enter Preferred Username: </label>
+        <input id="Username" name="username" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+        <label for="Password">Create a New Password: </label>
+        <input id="Password" name="password" type="text" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required/>-->
+      </fieldset>
+      <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
