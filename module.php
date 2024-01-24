@@ -35,7 +35,7 @@ $count = mysqli_num_rows($result);
 
 
 /*  
-//Fixed solution 2 Prepared Statements
+//Fixed solution 1 Prepared Statements
 $stmt = mysqli_stmt_init($conn);
 $sql = "SELECT Username, Password FROM customers WHERE Username = ? AND Password = ?";
 if (mysqli_stmt_prepare($stmt, $sql)) 
